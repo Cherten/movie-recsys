@@ -1,0 +1,35 @@
+[project]
+name = "movie-recsys"
+version = "0.1.0"
+description = "Подборка «Вам понравится» для главной страницы онлайн-кинотеатра"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = [
+    "pre-commit==4.7.0",
+    "ruff==0.17.3",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "UP", "B", "SIM", "N"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["movie_recsys"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
